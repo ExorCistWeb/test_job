@@ -560,6 +560,189 @@ footer {
     display: none;
 }
 
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal {
+    background: #F8F7F3;
+    max-width: 960px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-left,
+.modal-right {
+    padding: 40px 50px;
+    flex: 1 1 50%;
+}
+
+.modal-left {
+    background: #FEFEFE;
+}
+
+.modal h3 {
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--brown);
+    text-align: start;
+}
+
+.modal-left .p3 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--brown);
+}
+
+.modal-left input,
+.modal-left textarea {
+    padding: 15px 20px;
+    border: 1px solid rgba(38, 0, 0, 0.5);
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: rgba(38, 0, 0, 0.5);
+}
+
+.modal-left textarea {
+    resize: vertical;
+    min-height: 50px;
+}
+
+.modal-left button {
+    background: var(--brown);
+    color: #fff;
+    border: none;
+    padding: 20px 12px;
+    width: 100%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #FEFEFE;
+}
+
+.modal-left form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input_box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input_box label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #260000;
+}
+
+.modal-left .whatsapp-link {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.modal-left .whatsapp-link img {
+    vertical-align: middle;
+    width: 20px;
+    margin-right: 2px;
+}
+
+.modal-left .whatsapp-link a {
+    display: flex;
+    align-items: center;
+}
+
+.modal-left .privacy {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    justify-content: center;
+}
+
+.modal-left .privacy p {
+    margin: 0;
+    max-width: 268px;
+}
+
+.modal-right h3 {
+    margin-bottom: 10px;
+}
+
+.modal-right .p3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--brown);
+    margin-bottom: 20px;
+}
+
+.modal-right .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.modal-right .images img {
+    width: calc(33.333% - 5px);
+    border-radius: 5px;
+    height: 70px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-right p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #260000;
+    margin-top: 20px;
+}
+
 @media (max-width:1300px) {
     .wrapper {
         padding: 0 32px;
@@ -634,6 +817,25 @@ footer {
 }
 
 @media (max-width:768px) {
+    .modal {
+        flex-direction: column;
+        max-width: 90%;
+        padding: 10px;
+    }
+    .modal-left,
+    .modal-right {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+    .modal-right {
+        display: none;
+    }
+    .modal-right .images img {
+        width: calc(33.333% - 4px);
+    }
+    .modal-left button {
+        font-size: 14px;
+    }
     main {
         height: 757px;
     }

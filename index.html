@@ -18,7 +18,7 @@
                 </a>
                 <div class="header_content flex_a">
                     <a href="#" class="wa_link"><img src="./img/wa_icon.svg" alt="WA"></a>
-                    <button>Заказать звонок</button>
+                    <button onclick="openModal()">Заказать звонок</button>
                     <div class="lang_selector" id="langSelector">
                         <div class="select_lang flex_a">
                             <img src="./img/rus_flag.svg" alt="Русский">
@@ -59,8 +59,8 @@
                 </div>
                 <div class="main_content flex_a">
                     <div class="main_btn flex_a gap20">
-                        <button class="flex_a white_btn">Скачать брошюру <img src="./img/download_i.svg" alt="скачать"></button>
-                        <button class="blur_btn flex_a">Оставить заявку</button>
+                        <button class="flex_a white_btn" onclick="openModal()">Скачать брошюру <img src="./img/download_i.svg" alt="скачать"></button>
+                        <button class="blur_btn flex_a" onclick="openModal()">Оставить заявку</button>
                     </div>
                     <div class="main_info flex_a gap50">
                         <div class="main_box flex_f ">
@@ -145,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="apartment_btn flex_a">Скачать материалы проекта <img src="./img/download_white_i.svg" alt=""></button>
+                <button class="apartment_btn flex_a" onclick="openModal()">Скачать материалы проекта <img src="./img/download_white_i.svg" alt=""></button>
             </div>
         </div>
     </section>
@@ -166,8 +166,74 @@
             </div>
         </div>
     </footer>
+    <div class="modal-overlay" id="pdfModal">
+        <div class="modal">
+            <div class="close-btn" onclick="closeModal()">×</div>
+
+            <div class="modal-left">
+                <h3>Скачать PDF Брошюру<br>Jumeirah Residences</h3>
+                <p class="p3">Поделитесь своим номером <span style="color: #00A854;">WhatsApp</span>, и получите персональную PDF-презентацию</p>
+                <form action="">
+                    <div class="input_box">
+                        <label for="">Имя</label>
+                        <input type="text" placeholder="Ваше имя">
+                    </div>
+                    <div class="input_box">
+                        <label for="">Номер телефона</label>
+                        <input type="tel" placeholder="+971 12 123 1234">
+                    </div>
+                    <div class="input_box">
+                        <label for="">Сообщение (опционально)</label>
+                        <textarea placeholder="Ваше сообщение "></textarea>
+                    </div>
+                    <button>Скачать PDF</button>
+                </form>
+                <div class="whatsapp-link">
+                    или быстрая связь в
+                    <a href="" style="color: green;"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> WhatsApp</a>
+                </div>
+                <div class="privacy">
+                    <img src="./img/security.svg" alt="lock">
+                    <p class="p3"> Гарантируем конфиденциальность и защиту ваших данных</p>
+                </div>
+            </div>
+
+            <div class="modal-right">
+                <h3>PDF Презентация</h3>
+                <p class="p3">41.2 MB</p>
+                <div class="images">
+                    <img src="./img/modal_img.png" alt="img">
+                    <img src="./img/modal_img.png" alt="img">
+                    <img src="./img/modal_img.png" alt="img">
+                    <img src="./img/modal_img.png" alt="img">
+                    <img src="./img/modal_img.png" alt="img">
+                    <img src="./img/modal_img.png" alt="img">
+                </div>
+                <p>Укажите свои контакты, чтобы получить персональную презентацию. Воспользуйтесь уникальной возможностью.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            document.getElementById('pdfModal').style.display = 'flex';
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            document.getElementById('pdfModal').style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('pdfModal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>
